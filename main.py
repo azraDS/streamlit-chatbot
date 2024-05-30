@@ -1,8 +1,13 @@
 import streamlit as st
 from openai import OpenAI
 
-# Initialize OpenAI client
-client = OpenAI()
+
+
+
+# Initialize OpenAI client with your API key
+client = OpenAI(api_key="YOUR_OPENAI_API_KEY")
+
+
 
 st.header("Amazon e-Ticaret Rehberiniz")
 st.text("E-Ticaret hakkinda merak ettiklerinizi sorabilirsiniz.")
