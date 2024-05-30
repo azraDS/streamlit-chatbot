@@ -2,10 +2,10 @@ import streamlit as st
 from openai import OpenAI
 
 # Initialize OpenAI API key
-openai.api_key = st.secrets["OPENAI_API_KEY"]
+OpenAI.api_key = st.secrets["OPENAI_API_KEY"]
 
 st.header("Amazon e-Ticaret Rehberiniz")
-st.text("E-Ticaret hakkında merak ettiklerinizi sorabilirsiniz.")
+st.text("E-Ticaret hakkinda merak ettiklerinizi sorabilirsiniz.")
 
 from PIL import Image
 
@@ -13,12 +13,12 @@ from PIL import Image
 # Initialize the chat message history
 if "messages" not in st.session_state.keys():
     st.session_state.messages = [
-        {"role": "assistant", "content": "Bana e-ticaret hakkında birşeyler sorabilirsiniz."}
+        {"role": "assistant", "content": "Bana e-ticaret hakkinda birşeyler sorabilirsiniz."}
     ]
 
 # Function to generate a response from OpenAI GPT-3.5-turbo
 def generate_response(prompt):
-    response = openai.ChatCompletion.create(
+    response = OpenAI.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "You are a knowledgeable e-commerce assistant. Your users are asking questions about products, orders, or e-commerce advice. Answer the user's question concisely. If you don't know the answer, just say you don't know. Answer the question in the language asked."},
